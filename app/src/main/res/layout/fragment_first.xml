@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212"
+    tools:context=".FirstFragment">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/outlinedPrincipal"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="91dp"
+        android:layout_marginEnd="22dp"
+        android:clickable="true"
+        android:hint="Principal Amount"
+        android:textColorHint="#BB86FC"
+        app:boxCornerRadiusBottomEnd="16dp"
+        app:boxCornerRadiusTopStart="16dp"
+        app:boxStrokeColor="#BB86FC"
+        app:boxStrokeWidth="1dp"
+        app:counterEnabled="true"
+        app:counterMaxLength="7"
+        app:endIconMode="clear_text"
+        app:endIconTint="#BB86FC"
+        app:helperTextTextColor="#BB86FC"
+        app:hintTextColor="#BB86FC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:placeholderTextColor="#BB86FC"
+        app:startIconDrawable="@drawable/currency_inr"
+        app:startIconTint="#BB86FC">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/principal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#f5f5f5" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/outlinedRate"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="141dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="30dp"
+        android:clickable="true"
+        android:hint="Rate"
+        android:textColorHint="#BB86FC"
+        app:boxCornerRadiusBottomEnd="16dp"
+        app:boxCornerRadiusTopStart="16dp"
+        app:boxStrokeColor="#BB86FC"
+        app:boxStrokeWidth="1dp"
+        app:counterEnabled="true"
+        app:counterMaxLength="3"
+        app:endIconDrawable="@drawable/icons8_percentage_24"
+        app:endIconMode="custom"
+        app:endIconTint="#BB86FC"
+        app:helperText="per annum"
+        app:helperTextEnabled="true"
+        app:helperTextTextColor="#BB86FC"
+        app:hintTextColor="#BB86FC"
+        app:layout_constraintStart_toStartOf="@+id/outlinedPrincipal"
+        app:layout_constraintTop_toBottomOf="@+id/outlinedPrincipal"
+        app:startIconTint="#BB86FC">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/rate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#f5f5f5" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/outlinedTime"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="141dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="30dp"
+        android:clickable="true"
+        android:hint=" Time"
+        android:textColorHint="#BB86FC"
+        app:boxCornerRadiusBottomEnd="16dp"
+        app:boxCornerRadiusTopStart="16dp"
+        app:boxStrokeColor="#BB86FC"
+        app:boxStrokeWidth="1dp"
+        app:endIconMode="clear_text"
+        app:endIconTint="#BB86FC"
+        app:hintTextColor="#BB86FC"
+        app:layout_constraintEnd_toEndOf="@+id/outlinedPrincipal"
+        app:layout_constraintTop_toBottomOf="@+id/outlinedPrincipal"
+        app:startIconDrawable="@drawable/ic_baseline_calendar_today_24"
+        app:startIconTint="#BB86FC">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#f5f5f5" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn_calculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="130dp"
+        android:layout_marginEnd="130dp"
+        android:layout_marginBottom="296dp"
+
+        android:backgroundTint="#BB86FC"
+        android:elevation="3dp"
+        android:hapticFeedbackEnabled="true"
+        android:text="Calculate"
+        android:textColor="#121212"
+        android:textStyle="bold"
+        app:cornerRadius="20dp"
+        app:icon="@drawable/icons8_calculator_24"
+        app:iconTint="#121212"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="60dp"
+        app:cardBackgroundColor="#1F1B24"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_calculate">
+
+        <TextView
+            android:id="@+id/textResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:textColor="#f5f5f5"
+            android:textSize="20dp" />
+    </androidx.cardview.widget.CardView>
+
+    <RadioGroup
+        android:id="@+id/rgrp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="30dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/btn_calculate"
+        app:layout_constraintEnd_toEndOf="@+id/outlinedTime"
+        app:layout_constraintStart_toStartOf="@+id/outlinedRate">
+
+        <RadioButton
+            android:id="@+id/monthly"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="#BB86FC"
+            android:checked="false"
+            android:text="Monthly"
+            android:textColor="#BB86FC" />
+
+        <RadioButton
+            android:id="@+id/yearly"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="#BB86FC"
+            android:text="Yearly"
+            android:textColor="#BB86FC" />
+
+        <RadioButton
+            android:id="@+id/halfYearly"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="#BB86FC"
+            android:text="Half-Yearly"
+            android:textColor="#BB86FC" />
+    </RadioGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
